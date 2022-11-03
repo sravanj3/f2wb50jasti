@@ -7,8 +7,12 @@ block content
     each jungle,index in results 
                 table(style='width:100%')
                     tr 
-                        div(class="col-sm-2" ) #{Jungle.animal_name}
-                        div(class="col-sm-2" ) #{Jungle.animal_type}
-                        div(class="col-sm-2" ) #{Jungle.animal_quantity}
-  
- 
+                        div(class="col-sm-2" onclick=`buy(${index})`) #{jungle.animal_name}
+                        div(class="col-sm-2" onclick=`buy(${index})`) #{jungle.animal_type}
+                        div(class="col-sm-2" onclick=`buy(${index})`) #{jungle.animal_quantity}
+    script.
+     
+      function buy(itemNo)
+      {
+        alert(`Your animal ${itemNo+1}`)
+      }                      
